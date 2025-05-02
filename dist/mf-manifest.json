@@ -1,0 +1,91 @@
+{
+  "id": "fiap_mf_home",
+  "name": "fiap_mf_home",
+  "metaData": {
+    "name": "fiap_mf_home",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "1.0.0",
+      "buildName": "fiap_mf_home"
+    },
+    "remoteEntry": {
+      "name": "static/js/fiap_mf_home.2d1801ae.js",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "@mf-types.zip",
+      "api": "@mf-types.d.ts"
+    },
+    "globalName": "fiap_mf_home",
+    "pluginVersion": "0.13.1",
+    "prefetchInterface": false,
+    "publicPath": "/"
+  },
+  "shared": [
+    {
+      "id": "fiap_mf_home:react",
+      "name": "react",
+      "version": "18.3.1",
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "static/js/async/512.b5c7104c.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "fiap_mf_home:react-dom",
+      "name": "react-dom",
+      "version": "*",
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "static/js/async/987.0eeac9e0.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [],
+  "exposes": [
+    {
+      "id": "fiap_mf_home:.",
+      "name": ".",
+      "assets": {
+        "js": {
+          "sync": [
+            "static/js/async/416.d649d6b4.js",
+            "static/js/async/950.255bffb6.js",
+            "static/js/async/__federation_expose_default_export.bba98ba2.js"
+          ],
+          "async": []
+        },
+        "css": {
+          "sync": [
+            "static/css/async/__federation_expose_default_export.efac3874.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "."
+    }
+  ]
+}
