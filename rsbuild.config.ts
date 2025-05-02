@@ -13,6 +13,6 @@ export default defineConfig({
     pluginSvgr({mixedImport: true}),
   ],
   server: {
-    port: 3001,
+    port: 3002,
   },
 });

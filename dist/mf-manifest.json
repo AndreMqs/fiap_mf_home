@@ -9,7 +9,7 @@
       "buildName": "fiap_mf_home"
     },
     "remoteEntry": {
-      "name": "static/js/fiap_mf_home.2d1801ae.js",
+      "name": "static/js/fiap_mf_home.d98b3a5c.js",
       "path": "",
       "type": "global"
     },
@@ -22,7 +22,7 @@
     "globalName": "fiap_mf_home",
     "pluginVersion": "0.13.1",
     "prefetchInterface": false,
-    "publicPath": "/"
+    "getPublicPath": "http://localhost:3002/"
   },
   "shared": [
     {
@@ -54,7 +54,7 @@
         "js": {
           "async": [],
           "sync": [
-            "static/js/async/987.0eeac9e0.js"
+            "static/js/async/987.fb9ffd48.js"
           ]
         },
         "css": {
@@ -67,25 +67,25 @@
   "remotes": [],
   "exposes": [
     {
-      "id": "fiap_mf_home:.",
-      "name": ".",
+      "id": "fiap_mf_home:HomePage",
+      "name": "HomePage",
       "assets": {
         "js": {
           "sync": [
-            "static/js/async/416.d649d6b4.js",
-            "static/js/async/950.255bffb6.js",
-            "static/js/async/__federation_expose_default_export.bba98ba2.js"
+            "static/js/async/416.5c487563.js",
+            "static/js/async/511.70cc45e0.js",
+            "static/js/async/__federation_expose_HomePage.8795e3a7.js"
           ],
           "async": []
         },
         "css": {
           "sync": [
-            "static/css/async/__federation_expose_default_export.efac3874.css"
+            "static/css/async/__federation_expose_HomePage.efac3874.css"
           ],
           "async": []
         }
       },
-      "path": "."
+      "path": "./HomePage"
     }
   ]
 }
