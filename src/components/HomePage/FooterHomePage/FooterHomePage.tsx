@@ -27,29 +27,33 @@ export default function FooterHomePage() {
       <div className={styles.logoLinks}>
         <span className={styles.linkHeader}>Desenvolvido por André Câmara</span>
         <span>
-          <img src={LogoWhite} alt="Logo" className={styles.logo}/>
-          {/* <LogoWhite
+          <img 
+            src={LogoWhite} 
+            alt="Logo" 
             className={styles.logo}
-          /> */}
+            />
         </span>
         <div className={styles.icons}>
           <span>
-            <img src={Intagram} alt="Intagram" className={styles.logo}/>
-            {/* <Intagram
+            <img 
+              src={Intagram} 
+              alt="Intagram" 
               className={styles.logo}
-            /> */}
+            />
           </span>
           <span>
-            <img src={WhatsApp} alt="WhatsApp" className={styles.logo}/>
-            {/* <WhatsApp
+            <img 
+              src={WhatsApp} 
+              alt="WhatsApp" 
               className={styles.logo}
-            /> */}
+            />
           </span>
           <span>
-            <img src={Youtube} alt="Youtube" className={styles.logo}/>
-            {/* <Youtube
+            <img 
+              src={Youtube} 
+              alt="Youtube" 
               className={styles.logo}
-            /> */}
+            />
           </span>
         </div>
       </div>

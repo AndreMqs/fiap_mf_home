@@ -21,20 +21,21 @@ export default function HeaderHomePage() {
     if (typeof window !== "undefined") {
       if (window.screen.width > 768 || window.screen.width <= 425) {
         return (
-          <img src={Logo} className={styles.logo} onClick={() => goToInit()} alt="Logo" />
-          // <Logo
-          //   className={styles.logo}
-          //   onClick={() => goToInit()}
-          // />
+          <img 
+            src={Logo} 
+            className={styles.logo} 
+            onClick={() => goToInit()} 
+            alt="Logo" 
+          />
         );
       }
     }
 
     return (
-      <img src={LogoIcon} alt="Logo" />
-      // <LogoIcon
-      //   className={styles.logo}
-      // />
+      <img 
+        src={LogoIcon} 
+        alt="Logo" 
+      />
     );
   }
 
