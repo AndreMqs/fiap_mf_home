@@ -8,8 +8,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import styles from "./HeaderHomePage.module.scss"
 
+interface HeaderHomePageProps {
+  onOpenLogin: () => void;
+}
 
-export default function HeaderHomePage() {
+export default function HeaderHomePage({ onOpenLogin }: HeaderHomePageProps) {
 
   const goToInit = () => {
     if (typeof window !== "undefined") {
@@ -59,7 +62,7 @@ export default function HeaderHomePage() {
         </div>
         <div className={styles.buttons}>
           <button className={cn(styles.button, styles.btnOpenAccount)}>{getBtnOpenAccountText()}</button>
-          <button className={cn(styles.button, styles.btnLogin)} onClick={goToInit}>Já tenho conta</button>
+          <button className={cn(styles.button, styles.btnLogin)} onClick={onOpenLogin}>Já tenho conta</button>
         </div>
       </>
     );
