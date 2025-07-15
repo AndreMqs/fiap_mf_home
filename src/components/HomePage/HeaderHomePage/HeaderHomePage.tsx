@@ -10,9 +10,10 @@ import styles from "./HeaderHomePage.module.scss"
 
 interface HeaderHomePageProps {
   onOpenLogin: () => void;
+  onOpenRegister: () => void;
 }
 
-export default function HeaderHomePage({ onOpenLogin }: HeaderHomePageProps) {
+export default function HeaderHomePage({ onOpenLogin, onOpenRegister }: HeaderHomePageProps) {
 
   const goToInit = () => {
     if (typeof window !== "undefined") {
@@ -61,7 +62,7 @@ export default function HeaderHomePage({ onOpenLogin }: HeaderHomePageProps) {
           </div>
         </div>
         <div className={styles.buttons}>
-          <button className={cn(styles.button, styles.btnOpenAccount)}>{getBtnOpenAccountText()}</button>
+          <button className={cn(styles.button, styles.btnOpenAccount)} onClick={onOpenRegister}>{getBtnOpenAccountText()}</button>
           <button className={cn(styles.button, styles.btnLogin)} onClick={onOpenLogin}>Já tenho conta</button>
         </div>
       </>
