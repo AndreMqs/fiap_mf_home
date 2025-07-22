@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  home:
+    build: .
+    container_name: home
+    ports:
+      - "3001:80"
+    restart: always
