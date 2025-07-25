@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { clientOnly } from 'vike-react/clientOnly';
 
-import HeaderHomePage from './HeaderHomePage/HeaderHomePage';
+const HeaderHomePage = clientOnly(() => import("./HeaderHomePage/HeaderHomePage"));
 const ContentHomePage = clientOnly(() => import("./ContentHomePage/ContentHomePage"));
 import FooterHomePage from './FooterHomePage/FooterHomePage';
 import LoginModal from './LoginModal/LoginModal'
