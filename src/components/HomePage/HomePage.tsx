@@ -4,8 +4,8 @@ import { clientOnly } from 'vike-react/clientOnly';
 const HeaderHomePage = clientOnly(() => import("./HeaderHomePage/HeaderHomePage"));
 const ContentHomePage = clientOnly(() => import("./ContentHomePage/ContentHomePage"));
 import FooterHomePage from './FooterHomePage/FooterHomePage';
-import LoginModal from './LoginModal/LoginModal'
-import RegisterModal from './RegisterModal/RegisterModal'
+const LoginModal = clientOnly(() => import("./LoginModal/LoginModal"));
+const RegisterModal = clientOnly(() => import("./RegisterModal/RegisterModal"));
 
 import styles from "./HomePage.module.scss"
 
