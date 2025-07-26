@@ -4,7 +4,7 @@ import federation from '@originjs/vite-plugin-federation';
 import vike from 'vike/plugin'
 
 // https://vite.dev/config/
-const elastic_ip = '18.188.40.201:';
+const elastic_ip = '18.188.40.201';
 
 const isDevEnv = false; // Mude para true quando em dev
 export default defineConfig({
