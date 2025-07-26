@@ -4,10 +4,11 @@ import federation from '@originjs/vite-plugin-federation';
 import vike from 'vike/plugin'
 
 // https://vite.dev/config/
-
+const elastic_ip = '18.188.40.201';
 const isDevEnv = false; // Mude para true quando em dev
+
 export default defineConfig({
-  base: isDevEnv ? 'http://localhost:3001' : '/',
+  base: isDevEnv ? 'http://localhost:3001' : `http://${elastic_ip}:3001`,
   server: {
     port: 3001,
     cors: true,
