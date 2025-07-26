@@ -5,7 +5,7 @@ import vike from 'vike/plugin'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: 'http://localhost:3001/',
+  base: '/',
   plugins: [
     react(),
     vike(),
@@ -15,17 +15,12 @@ export default defineConfig({
       exposes: {
         './Home': './src/App.tsx'
       },
-      // shared: [
-      //   'react', 
-      //   'react-dom', 
-      //   '@mui/material',
-      //   '@mui/icons-material',
-      //   '@emotion/styled',
-      //   '@emotion/react',
-      // ]
     }),
   ],
   build: {
     target: 'esnext'
   },
+  ssr: {
+
+  }
 })

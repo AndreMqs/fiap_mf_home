@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vike --port 3001 --strictPort",
+    "dev": "vike dev --port 3001",
     "build": "vike build",
     "lint": "eslint .",
-    "preview": "vike preview --port 3001 --strictPort --host",
+    "preview": "vike preview --port 3001 --host",
     "serve": "vike preview --port 3001 --host"
   },
   "dependencies": {
