@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { clientOnly } from 'vike-react/clientOnly';
 
-const HeaderHomePage = clientOnly(() => import("./HeaderHomePage/HeaderHomePage"));
-const ContentHomePage = clientOnly(() => import("./ContentHomePage/ContentHomePage"));
+import HeaderHomePage from "./HeaderHomePage/HeaderHomePage";
+import ContentHomePage from "./ContentHomePage/ContentHomePage";
 import FooterHomePage from './FooterHomePage/FooterHomePage';
 const LoginModal = clientOnly(() => import("./LoginModal/LoginModal"));
 const RegisterModal = clientOnly(() => import("./RegisterModal/RegisterModal"));
@@ -35,7 +35,7 @@ export default function HomePage() {
         onOpenLogin={toggleLogin} 
         onOpenRegister={toggleRegister}
       />
-      <ContentHomePage fallback={<>Loading...</>}/>
+      <ContentHomePage/>
       <FooterHomePage />
     </div>
   );

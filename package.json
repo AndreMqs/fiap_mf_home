@@ -8,7 +8,8 @@
     "build": "vike build",
     "lint": "eslint .",
     "preview": "vike preview --port 3001 --host",
-    "serve": "vike preview --port 3001 --host"
+    "serve": "vike preview --port 3001 --host",
+    "local": "npm run build & npm run serve"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
