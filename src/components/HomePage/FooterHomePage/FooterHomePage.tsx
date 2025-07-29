@@ -1,60 +1,112 @@
+import { useEffect, useState } from "react";
 import LogoWhite from "../../../images/LogoWhite.svg";
-import Intagram from "../../../images/Instagram.svg";
+import Instagram from "../../../images/Instagram.svg";
 import WhatsApp from "../../../images/WhatsApp.svg";
 import Youtube from "../../../images/Youtube.svg";
 
-import styles from "./FooterHomePage.module.scss"
-
-
 export default function FooterHomePage() {
+  const [isClient, setIsClient] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+
+    const updateDevice = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    updateDevice();
+    window.addEventListener("resize", updateDevice);
+    return () => window.removeEventListener("resize", updateDevice);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
+  const styles: { [key: string]: React.CSSProperties } = {
+    footerContainer: {
+      display: "flex",
+      justifyContent: "space-between",
+      padding: "40px 24px",
+      gap: "16px",
+      backgroundColor: "#000",
+      color: "#fff",
+      textAlign: "left",
+      flexDirection: "row",
+    },
+    links: {
+      display: "flex",
+      flexDirection: "column",
+    },
+    linkHeader: {
+      fontWeight: "bold",
+      color: "white",
+      marginBottom: 8,
+    },
+    singleLink: {
+      color: "white",
+      fontSize: "14px",
+      margin: "4px 0",
+    },
+    logoLinks: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-start",
+    },
+    logo: {
+      width: 120,
+      height: "auto",
+      marginBottom: 16,
+    },
+    icons: {
+      display: "flex",
+      gap: "16px",
+    },
+    iconImage: {
+      width: 24,
+      height: 24,
+    },
+    footerContainerStyle: {
+      display: "flex",
+      justifyContent: "space-between",
+      padding: "40px 24px",
+      backgroundColor: "#000",
+      color: "#fff",
+      flexDirection: (isMobile ? "column" : "row"),
+      gap: isMobile ? "32px" : "16px",
+      textAlign: isMobile ? "center" : "left",
+    },
+    logoLinksStyle: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: isMobile ? "center" : "flex-start",
+    }
+  };
 
   return (
-    <div id='footerContainer' className={styles.footerContainer}>
-      <div className={styles.links}>
-        <span className={styles.linkHeader}>Serviços</span>
-        <span className={styles.singleLink}>Conta corrente</span>
-        <span className={styles.singleLink}>Conta PJ</span>
-        <span className={styles.singleLink}>Cartão de crédito</span>
+    <div id="footerContainer" style={styles.footerContainerStyle}>
+      <div style={styles.links}>
+        <span style={styles.linkHeader}>Serviços</span>
+        <span style={styles.singleLink}>Conta corrente</span>
+        <span style={styles.singleLink}>Conta PJ</span>
+        <span style={styles.singleLink}>Cartão de crédito</span>
       </div>
 
-      <div className={styles.links}>
-        <span className={styles.linkHeader}>Contato</span>
-        <span className={styles.singleLink}>0800 004 250 08</span>
-        <span className={styles.singleLink}>meajuda@bytebank.com.br</span>
-        <span className={styles.singleLink}>ouvidoria@bytebank.com.br</span>
+      <div style={styles.links}>
+        <span style={styles.linkHeader}>Contato</span>
+        <span style={styles.singleLink}>0800 004 250 08</span>
+        <span style={styles.singleLink}>meajuda@bytebank.com.br</span>
+        <span style={styles.singleLink}>ouvidoria@bytebank.com.br</span>
       </div>
-      
-      <div className={styles.logoLinks}>
-        <span className={styles.linkHeader}>Desenvolvido por André Câmara</span>
-        <span>
-          <img 
-            src={LogoWhite} 
-            alt="Logo" 
-            className={styles.logo}
-            />
-        </span>
-        <div className={styles.icons}>
-          <span>
-            <img 
-              src={Intagram} 
-              alt="Intagram" 
-              className={styles.logo}
-            />
-          </span>
-          <span>
-            <img 
-              src={WhatsApp} 
-              alt="WhatsApp" 
-              className={styles.logo}
-            />
-          </span>
-          <span>
-            <img 
-              src={Youtube} 
-              alt="Youtube" 
-              className={styles.logo}
-            />
-          </span>
+
+      <div style={styles.logoLinksStyle}>
+        <span style={styles.linkHeader}>Desenvolvido por André Câmara</span>
+        <img src={LogoWhite} alt="Logo" style={styles.logo} />
+        <div style={styles.icons}>
+          <img src={Instagram} alt="Instagram" style={styles.iconImage} />
+          <img src={WhatsApp} alt="WhatsApp" style={styles.iconImage} />
+          <img src={Youtube} alt="Youtube" style={styles.iconImage} />
         </div>
       </div>
     </div>

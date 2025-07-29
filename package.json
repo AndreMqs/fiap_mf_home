@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3001 --strictPort",
-    "build": "vite build",
+    "dev": "vike dev --port 3001",
+    "build": "vike build",
     "lint": "eslint .",
-    "preview": "vite preview --port 3001 --strictPort --host",
-    "serve": "vite preview --port 3001 --strictPort --host"
+    "preview": "vike preview --port 3001 --host",
+    "serve": "vike preview --port 3001 --host",
+    "local": "npm run build & npm run serve"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -16,8 +17,10 @@
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
     "classnames": "^2.5.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "vike": "^0.4.236",
+    "vike-react": "^0.6.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
