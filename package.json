@@ -19,6 +19,7 @@
     "classnames": "^2.5.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "recharts": "^3.1.0",
     "vike": "^0.4.236",
     "vike-react": "^0.6.5"
   },
