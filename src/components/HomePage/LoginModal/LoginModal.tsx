@@ -1,4 +1,5 @@
 import IlustracaoBanner from '../../../images/IlustracaoBanner.svg';
+import { useUser } from '../../../hooks/useParentApp';
 
 import styles from './LoginModal.module.scss';
 
@@ -10,9 +11,31 @@ interface LoginModalProps {
 export default function LoginModal({ open, onClose }: LoginModalProps) {
   if (!open) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const {setUserName, getUserName} = useUser();
+
+  const getUser = (formData: FormData) => {
+    const localUserName = getUserName();
+
+    if (localUserName !== "Cliente") {
+      return localUserName;
+    }
+
+    return String(formData.get('email'));
+  }
+
+  const goToInit = () => {
+    if (typeof window !== "undefined") {
+      window.location.href = "/inicio";
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onClose();
+
+    const formData = new FormData(e.currentTarget);
+    setUserName(getUser(formData));
+
+    goToInit();
   };
 
   return (
@@ -24,11 +47,11 @@ export default function LoginModal({ open, onClose }: LoginModalProps) {
         <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
           <div className={styles.fieldGroup}>
             <label className={styles.label} htmlFor="login-email">Email</label>
-            <input id="login-email" className={styles.input} type="email" placeholder="Digite seu email" required />
+            <input id="login-email" name="email" className={styles.input} type="email" placeholder="Digite seu email" required />
           </div>
           <div className={styles.fieldGroup}>
             <label className={styles.label} htmlFor="login-senha">Senha</label>
-            <input id="login-senha" className={styles.input} type="password" placeholder="Digite sua senha" required />
+            <input id="login-senha" name="senha" className={styles.input} type="password" placeholder="Digite sua senha" required />
           </div>
           <a href="#" className={styles.forgotPassword}>Esqueci a senha!</a>
           <button type="submit" className={styles.submitButton}>Acessar</button>

@@ -90,18 +90,11 @@ export default function HeaderHomePage({ onOpenLogin, onOpenRegister }: HeaderHo
     },
   };
 
-  const goToInit = () => {
-    if (typeof window !== "undefined") {
-      window.location.href = "/inicio";
-    }
-  };
-
   const getLogo = () => {
     if (!isTablet || isMobile) {
       return (
         <img
           src={Logo}
-          onClick={goToInit}
           alt="Logo"
           style={{
             marginRight: isTablet ? 56 : 72,
