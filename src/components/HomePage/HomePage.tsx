@@ -35,7 +35,10 @@ export default function HomePage() {
         onOpenLogin={toggleLogin} 
         onOpenRegister={toggleRegister}
       />
-      <ContentHomePage/>
+      <ContentHomePage 
+        onOpenLogin={toggleLogin} 
+        onOpenRegister={toggleRegister}
+      />
       <FooterHomePage />
     </div>
   );

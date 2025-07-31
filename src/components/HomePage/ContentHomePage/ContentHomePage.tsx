@@ -5,7 +5,12 @@ import IlustracaoBanner from "../../../images/IlustracaoBanner.svg";
 import Presente from "../../../images/Presente.svg";
 import Saque from "../../../images/Saque.svg";
 
-export default function ContentHomePage() {
+interface ContentHomePageProps {
+  onOpenLogin: () => void;
+  onOpenRegister: () => void;
+}
+
+export default function ContentHomePage({ onOpenLogin, onOpenRegister }: ContentHomePageProps) {
   const [isClient, setIsClient] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -24,10 +29,6 @@ export default function ContentHomePage() {
   }, []);
 
   if (!isClient) return null;
-
-  const goToInit = () => {
-    window.location.href = "/inicio";
-  };
 
   const styles: { [key: string]: React.CSSProperties } = {
     contentContainerStyle: {
@@ -173,8 +174,8 @@ export default function ContentHomePage() {
 
         {isMobile && (
           <div style={styles.buttonsStyle}>
-            <button style={styles.openAccountButtonStyle}>Abrir conta</button>
-            <button style={styles.loginButtonStyle} onClick={goToInit}>Já tenho conta</button>
+            <button style={styles.openAccountButtonStyle} onClick={onOpenRegister}>Abrir conta</button>
+            <button style={styles.loginButtonStyle} onClick={onOpenLogin}>Já tenho conta</button>
           </div>
         )}
 
