@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import IlustracaoBanner from '../../../images/IlustracaoBanner.svg';
 
+import { useUser } from '../../../hooks/useParentApp';
+
 import styles from './RegisterModal.module.scss';
 
 interface RegisterModalProps {
@@ -11,12 +13,24 @@ interface RegisterModalProps {
 
 export default function RegisterModal({ open, onClose }: RegisterModalProps) {
   const [checked, setChecked] = useState(false);
+  const {setUserName} = useUser();
 
   if (!open) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const goToInit = () => {
+    if (typeof window !== "undefined") {
+      window.location.href = "/inicio";
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onClose();
+
+    const formData = new FormData(e.currentTarget);
+    const nome = formData.get('nome');
+    setUserName(String(nome));
+
+    goToInit();
   };
 
   return (
@@ -30,17 +44,17 @@ export default function RegisterModal({ open, onClose }: RegisterModalProps) {
         <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
           <div className={styles.fieldGroup}>
             <label className={styles.label} htmlFor="register-nome">Nome</label>
-            <input id="register-nome" className={styles.input} type="text" placeholder="Digite seu nome completo" required />
+            <input id="register-nome" name="nome" className={styles.input} type="text" placeholder="Digite seu nome completo" required />
           </div>
 
           <div className={styles.fieldGroup}>
             <label className={styles.label} htmlFor="register-email">Email</label>
-            <input id="register-email" className={styles.input} type="email" placeholder="Digite seu email" required />
+            <input id="register-email" name="email" className={styles.input} type="email" placeholder="Digite seu email" required />
           </div>
 
           <div className={styles.fieldGroup}>
             <label className={styles.label} htmlFor="register-senha">Senha</label>
-            <input id="register-senha" className={styles.input} type="password" placeholder="Digite sua senha" required />
+            <input id="register-senha" name="senha" className={styles.input} type="password" placeholder="Digite sua senha" required />
           </div>
 
           <div className={styles.checkboxRow}>
